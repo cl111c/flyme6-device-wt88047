@@ -1,0 +1,34 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.core_ctl_min_cpu=1
+ro.core_ctl_max_cpu=4
+ro.min_freq_0=200000
+ro.usb.vid=2717
+ro.usb.id.midi=90BA
+ro.usb.id.midi_adb=90BB
+ro.usb.id.mtp=ff60
+ro.usb.id.mtp_adb=ff68
+ro.usb.id.ptp=ff10
+ro.usb.id.ptp_adb=ff18
+ro.usb.id.ums=ff20
+ro.usb.id.ums_adb=ff28
+ro.adb.secure=1
+ro.secure=1
+security.perf_harden=1
+ro.allow.mock.location=0
+ro.debuggable=1
+ro.zygote=zygote32
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+ro.dalvik.vm.native.bridge=0
+debug.atrace.tags.enableflags=0
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Dom Set 11 02:19:11 BRT 2016
+ro.bootimage.build.date.utc=1473571151
+ro.bootimage.build.fingerprint=Xiaomi/nx_wt88047/wt88047:6.0.1/MOB31E/1a5ac95527:userdebug/test-keys
+persist.sys.usb.config=none

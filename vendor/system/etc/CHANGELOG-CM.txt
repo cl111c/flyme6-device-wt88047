@@ -1,0 +1,37 @@
+===============
+Nexus Experience ROM
+===============
+
+Visit http://nxrom.us for download links and updates.
+
+CHANGELOG
+---------
+
+### Release 3.0
+
+* Android 5.1 merged
+* WiFi issue from CM12.1 fixed
+* Use WebViewGoogle (can be updated from Play Store like Stock ROM
+* FAB for Clear all recents
+* Added Date customizations in Clock options
+* Network traffic on Status bar with Auto hide option
+* Added more Animation scales
+* All latest commits from CM12.1 (04-11)
+
+### Release 2.0
+
+* Initial Release including all stable CM12 features
+* ALL FIXES AND SOME IMPROVEMENTS from Android 5.1 like improvements in Lock screen, WiFi and Bluetooth Tiles, Heads Up behavior, new Clock app, new clear all notifications button and others!
+* Fully user experience of Nexus devices since first boot
+* Single SIM and Dual SIM working
+* Heads Up Enabler/Disabler and Heads Up for all notifications options
+* Notification ticker option
+* Lock screen custom shortcuts
+* Navigation bar height
+* Option to add Sound panel to power menu
+* Advanced IME options
+* Option to disable Quick settings on lock screen
+
+### Release 1.0
+
+* Initial Release (Expect all the bugs CM)
