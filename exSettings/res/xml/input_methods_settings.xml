@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference android:persistent="false" android:title="@string/keyboard_rotation_toggle_title" android:key="keyboard_rotation_toggle" android:summary="@string/keyboard_rotation_toggle_summary" android:defaultValue="false" />
+    <ListPreference android:persistent="false" android:entries="@array/keyboard_rotation_timeout_entries" android:title="@string/keyboard_rotation_timeout_title" android:key="keyboard_rotation_timeout" android:dependency="keyboard_rotation_toggle" android:dialogTitle="@string/keyboard_rotation_timeout_title" android:entryValues="@array/keyboard_rotation_timeout_values" />
+    <SwitchPreference android:persistent="false" android:title="@string/disable_fullscreen_keyboard_title" android:key="disable_fullscreen_keyboard" android:summary="@string/disable_fullscreen_keyboard_summary" android:defaultValue="false" />
+    <SwitchPreference android:persistent="false" android:title="@string/show_enter_key_title" android:key="show_enter_key" android:summary="@string/show_enter_key_summary" />
+</PreferenceScreen>

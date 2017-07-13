@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <RelativeLayout android:gravity="center_horizontal" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+        <TextView android:id="@id/adj_hue_text" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/adj_hue_title" />
+        <TextView android:id="@id/adj_hue_value" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+        <com.android.exsettings.IntervalSeekBar android:id="@id/adj_hue_seekbar" android:paddingTop="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/adj_hue_text" settings:min="0.2" settings:max="1.0" settings:defaultValue="1.0" settings:digits="4" />
+        <TextView android:id="@id/adj_saturation_text" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/adj_saturation_title" android:layout_below="@id/adj_hue_seekbar" />
+        <TextView android:id="@id/adj_saturation_value" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/adj_hue_seekbar" android:layout_alignParentRight="true" />
+        <com.android.exsettings.IntervalSeekBar android:id="@id/adj_saturation_seekbar" android:paddingTop="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/adj_saturation_text" settings:min="0.2" settings:max="1.0" settings:defaultValue="1.0" settings:digits="4" />
+        <TextView android:id="@id/adj_intensity_text" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/adj_intensity_title" android:layout_below="@id/adj_saturation_seekbar" />
+        <TextView android:id="@id/adj_intensity_value" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/adj_saturation_seekbar" android:layout_alignParentRight="true" />
+        <com.android.exsettings.IntervalSeekBar android:id="@id/adj_intensity_seekbar" android:paddingTop="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/adj_intensity_text" settings:min="0.2" settings:max="1.0" settings:defaultValue="1.0" settings:digits="4" />
+        <TextView android:id="@id/adj_contrast_text" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/adj_contrast_title" android:layout_below="@id/adj_intensity_seekbar" />
+        <TextView android:id="@id/adj_contrast_value" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/adj_intensity_seekbar" android:layout_alignParentRight="true" />
+        <com.android.exsettings.IntervalSeekBar android:id="@id/adj_contrast_seekbar" android:paddingTop="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/adj_contrast_text" settings:min="0.2" settings:max="1.0" settings:defaultValue="1.0" settings:digits="4" />
+        <ImageView android:id="@id/black_scale_picture_adjustment" android:paddingTop="20.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:src="@drawable/color_tuning_preview" android:layout_below="@id/adj_contrast_seekbar" />
+    </RelativeLayout>
+</ScrollView>

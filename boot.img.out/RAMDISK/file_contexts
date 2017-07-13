@@ -384,6 +384,10 @@
 /dev/qbt1000                                    u:object_r:qbt1000_device:s0
 /dev/at_.*                                      u:object_r:at_device:s0
 /dev/sg.*                                       u:object_r:sg_device:s0
+/dev/socket/flymed      u:object_r:flymed_socket:s0
+/system/bin/flymed      u:object_r:flymed_exec:s0
+/data/system/users/[0-9]+/lock_wallpaper		u:object_r:wallpaper_file:s0
+/data/system/users/[0-9]+/smart_wallpaper_target		u:object_r:wallpaper_file:s0
 
 ###################################
 # Dev block nodes

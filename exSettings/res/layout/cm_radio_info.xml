@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/info_layout">
+        <Button android:textSize="14.0sp" android:id="@id/mbn_auto_load" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+        <Button android:textSize="14.0sp" android:id="@id/volte_avail_ovr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+        <Button android:textSize="14.0sp" android:id="@id/vt_avail_ovr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+        <Button android:textSize="14.0sp" android:id="@id/wfc_avail_ovr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+        <Button android:textSize="14.0sp" android:id="@id/adb_radio_log" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+        <Button android:textSize="14.0sp" android:id="@id/diag_log" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+    </LinearLayout>
+</ScrollView>

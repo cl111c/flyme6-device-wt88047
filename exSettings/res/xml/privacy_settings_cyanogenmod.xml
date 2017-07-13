@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/privacy_settings_cyanogenmod_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="@string/privacy_guard_manager_title" android:key="privacy_guard_manager" android:summary="@string/privacy_guard_manager_summary" android:fragment="com.android.exsettings.privacyguard.PrivacyGuardManager" />
+    <PreferenceScreen android:title="@string/blacklist_title" android:key="blacklist" android:summary="@string/blacklist_summary" android:fragment="com.android.exsettings.blacklist.BlacklistSettings" />
+    <PreferenceScreen android:title="@string/wakelock_blocker_title" android:key="wakelock_blocker" android:summary="@string/wakelock_blocker_summary" android:fragment="com.android.exsettings.nx.WakeLockBlocker" />
+    <Preference android:title="@string/protected_apps" android:key="protected_apps_manager" android:summary="@string/protected_apps_summary">
+        <intent android:targetPackage="com.android.exsettings" android:action="android.intent.action.VIEW" android:targetClass="com.android.exsettings.applications.ProtectedAppsActivity" />
+    </Preference>
+</PreferenceScreen>

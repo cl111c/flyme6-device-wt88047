@@ -54,7 +54,8 @@ vendor_modify_images := boot
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyChain PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FMRadio FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell CMSettingsProvider telresources TimeService CellBroadcastReceiver CMAudioService ThemesProvider
+#删除FMRadio
+vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyChain PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell CMSettingsProvider telresources
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -63,7 +64,7 @@ vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyC
 # You need ro decode FMRadio.apk to the project directory(use apktool d FMRadio.apk) first,
 # and then you can make it by:   make FMRadio
 #-----------------------------------------------------------------------------
-#vendor_modify_apps := FMRadio
+vendor_modify_apps := exSettings
 
 ##############################################################################
 # The value decides which vendor jar you want to modify.
@@ -72,7 +73,7 @@ vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyC
 # You need to decode android.policy.jar to the project directory (use apktool d android.policy.jar) first,
 # and then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := com.qti.dpmframework framework services telephony-common wifi-service
+vendor_modify_jars := framework services telephony-common wifi-service
 
 ##############################################################################
 # The value decides which board system directory you want to save.
@@ -93,7 +94,8 @@ vendor_modify_jars := com.qti.dpmframework framework services telephony-common w
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-#board_remove_apps := LogReport
+#删除 logreport 读书 邮件 flyme论坛 生活服务 优选 福利中心 MZ更新 计步器 资讯 
+board_remove_apps := LogReport EBook Email flymebbs Life Mall MzCompaign MzUpdate Pedometer Reader
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -105,7 +107,7 @@ vendor_modify_jars := com.qti.dpmframework framework services telephony-common w
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system apk).
 #-----------------------------------------------------------------------------
-#board_modify_apps := TeleService
+board_modify_apps := TeleService SystemUI Telecom Settings
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the board framework jar.

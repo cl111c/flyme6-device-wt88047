@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <ImageView android:gravity="center" android:id="@id/nfc_payment_tap_image" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/tapandpay_emptystate" />
+            <TextView android:textSize="24.0sp" android:gravity="center" android:id="@id/nfc_payment_empty_text" android:paddingTop="32.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/nfc_payment_no_apps" />
+        </LinearLayout>
+        <ListView android:scrollbarStyle="@integer/preference_scrollbar_style" android:id="@android:id/list" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawSelectorOnTop="false" />
+    </FrameLayout>
+</LinearLayout>

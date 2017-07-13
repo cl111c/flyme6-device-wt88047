@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/floating_action_button" style="@style/floating_action_button"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:src="@drawable/ic_menu_add_white" style="@style/floating_action_button_image" />
+</FrameLayout>

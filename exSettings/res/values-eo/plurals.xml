@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="backlight_timeout_time">
+        <item quantity="other">%d sekundoj</item>
+        <item quantity="one">%d sekundo</item>
+    </plurals>
+    <plurals name="app_ops_count">
+        <item quantity="other">%d fojoj</item>
+        <item quantity="one">unufoje</item>
+    </plurals>
+    <plurals name="show_dev_countdown_cm">
+        <item quantity="other">Vi estas nun %1$d paŝojn antaŭ la aktivado de programadaj argordoj.</item>
+        <item quantity="one">Vi estas nun %1$d paŝon antaŭ la aktivado de programadaj argordoj.</item>
+    </plurals>
+</resources>

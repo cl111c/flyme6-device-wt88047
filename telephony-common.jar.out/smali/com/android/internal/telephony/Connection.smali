@@ -67,6 +67,8 @@
     .end annotation
 .end field
 
+.field private mLocalVideoCapable:Z
+
 .field protected mNumberConverted:Z
 
 .field protected mNumberPresentation:I
@@ -85,6 +87,7 @@
 .end field
 
 .field public mPreHandoverState:Lcom/android/internal/telephony/Call$State;
+.field private mRemoteVideoCapable:Z
 
 .field mUserData:Ljava/lang/Object;
 
@@ -584,7 +587,25 @@
     return v0
 .end method
 
+.method public isLocalVideoCapable()Z
+    .locals 1
+
+    .prologue
+    iget-boolean v0, p0, Lcom/android/internal/telephony/Connection;->mLocalVideoCapable:Z
+
+    return v0
+.end method
+
 .method public abstract isMultiparty()Z
+.end method
+
+.method public isRemoteVideoCapable()Z
+    .locals 1
+
+    .prologue
+    iget-boolean v0, p0, Lcom/android/internal/telephony/Connection;->mRemoteVideoCapable:Z
+
+    return v0
 .end method
 
 .method public isRinging()Z

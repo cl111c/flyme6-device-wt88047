@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/wifi_advanced_titlebar"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference android:persistent="false" android:title="@string/wifi_notify_open_networks" android:key="notify_open_networks" android:summary="@string/wifi_notify_open_networks_summary" />
+    <ListPreference android:persistent="false" android:entries="@array/wifi_sleep_policy_entries" android:title="@string/wifi_setting_sleep_policy_title" android:key="sleep_policy" android:entryValues="@array/wifi_sleep_policy_values" />
+    <com.android.exsettings.AppListSwitchPreference android:persistent="false" android:title="@string/wifi_automatically_connect_title" android:key="wifi_assistant" android:summary="@string/wifi_automatically_connect_summary" android:dialogTitle="@string/wifi_select_assistant_dialog_title" />
+    <ListPreference android:persistent="false" android:entries="@array/wifi_frequency_band_entries" android:title="@string/wifi_setting_frequency_band_title" android:key="frequency_band" android:summary="@string/wifi_setting_frequency_band_summary" android:entryValues="@array/wifi_frequency_band_values" />
+    <ListPreference android:persistent="false" android:entries="@array/wifi_countrycode_entries" android:title="@string/wifi_setting_countrycode_title" android:key="wifi_countrycode" android:summary="@string/wifi_setting_countrycode_summary" android:entryValues="@array/wifi_countrycode_values" />
+    <Preference android:persistent="false" android:title="@string/wifi_install_credentials" android:key="install_credentials" />
+    <Preference android:persistent="false" android:title="@string/wifi_menu_p2p" android:key="wifi_direct" />
+    <Preference android:persistent="false" android:title="@string/wifi_menu_wps_pbc" android:key="wps_push_button" />
+    <Preference android:persistent="false" android:title="@string/wifi_menu_wps_pin" android:key="wps_pin_entry" />
+    <Preference android:layout="@layout/wifi_advance_layout" android:title="@string/wifi_advanced_mac_address_title" android:key="mac_address" />
+    <Preference android:layout="@layout/wifi_advance_layout" android:title="@string/wifi_advanced_ip_address_title" android:key="current_ip_address" />
+</PreferenceScreen>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/security_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:persistent="false" android:title="@string/device_privacy_title">
+        <PreferenceScreen android:title="@string/privacy_settings_cyanogenmod_title" android:key="privacy_settings_cyanogenmod" android:fragment="com.android.exsettings.cyanogenmod.PrivacySettings" />
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/security_passwords_title">
+        <SwitchPreference android:persistent="false" android:title="@string/show_password" android:key="show_password" />
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/sim_lock_settings_title" android:key="sim_lock">
+        <Preference android:persistent="false" android:title="@string/sim_lock_settings_category" android:key="sim_lock_settings">
+            <intent android:targetPackage="com.android.exsettings" android:action="android.intent.action.MAIN" android:targetClass="com.android.exsettings.IccLockSettings" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/device_admin_title" android:key="device_admin_category">
+        <Preference android:persistent="false" android:title="@string/manage_device_admin" android:key="manage_device_admin" android:summary="@string/manage_device_admin_summary" android:fragment="com.android.exsettings.DeviceAdminSettings" />
+        <SwitchPreference android:persistent="false" android:title="@string/install_applications" android:key="toggle_install_applications" android:summaryOn="@string/install_unknown_applications" android:summaryOff="@string/install_unknown_applications" />
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/credentials_title" android:key="credentials_management">
+        <Preference android:persistent="false" android:title="@string/credential_storage_type" android:key="credential_storage_type" style="?android:attr/preferenceInformationStyle" />
+        <Preference android:persistent="false" android:title="@string/trusted_credentials" android:key="trusted_credentials" android:summary="@string/trusted_credentials_summary" android:fragment="com.android.exsettings.TrustedCredentialsSettings" />
+        <Preference android:persistent="false" android:title="@string/credentials_install" android:key="credentials_install" android:summary="@string/credentials_install_summary">
+            <intent android:targetPackage="com.android.certinstaller" android:action="android.credentials.INSTALL" android:targetClass="com.android.certinstaller.CertInstallerMain" />
+        </Preference>
+        <Preference android:persistent="false" android:title="@string/credentials_reset" android:key="credentials_reset" android:summary="@string/credentials_reset_summary">
+            <intent android:targetPackage="com.android.exsettings" android:action="com.android.credentials.RESET" android:targetClass="com.android.exsettings.CredentialStorage" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/category_misc" android:key="advanced">
+        <ListPreference android:entries="@array/sms_security_check_limit_entries" android:title="@string/sms_security_check_limit_title" android:key="sms_security_check_limit" android:defaultValue="30" android:dialogTitle="@string/sms_security_check_limit_title" android:entryValues="@array/sms_security_check_limit_values" />
+        <PreferenceScreen android:title="@string/screen_pinning_title" android:key="screen_pinning_settings" android:summary="@string/switch_off_text" android:fragment="com.android.exsettings.ScreenPinningSettings" />
+        <Preference android:title="@string/usage_access_title" android:key="usage_access" android:fragment="com.android.exsettings.applications.ManageApplications">
+            <extra android:name="classname" android:value="com.android.exsettings.Settings$UsageAccessSettingsActivity" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

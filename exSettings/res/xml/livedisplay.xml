@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <PreferenceCategory android:title="@string/live_display_title" android:key="live_display_options">
+        <ListPreference android:persistent="false" android:title="@string/live_display_color_profile_title" android:key="live_display_color_profile" />
+        <ListPreference android:persistent="false" android:title="@string/live_display_mode" android:key="live_display" />
+        <com.android.exsettings.livedisplay.DisplayTemperature android:persistent="false" android:title="@string/live_display_color_temperature_title" android:key="live_display_color_temperature" android:dialogTitle="@string/live_display_title" />
+        <com.android.exsettings.cyanogenmod.CMSystemSettingSwitchPreference android:title="@string/live_display_outdoor_mode_title" android:key="display_auto_outdoor_mode" android:summary="@string/live_display_outdoor_mode_summary" android:defaultValue="@cyanogenmod.platform:bool/config_defaultAutoOutdoorMode" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/advanced" android:key="advanced">
+        <com.android.exsettings.livedisplay.DisplayColor android:persistent="false" android:title="@string/color_calibration_title" android:key="color_calibration" android:summary="@string/color_calibration_summary" android:dialogTitle="@string/color_calibration_title" />
+        <com.android.exsettings.livedisplay.PictureAdjustment android:persistent="false" android:title="@string/picture_adjustment_title" android:key="picture_adjustment" android:summary="@string/picture_adjustment_summary" android:dialogTitle="@string/picture_adjustment_title" />
+        <com.android.exsettings.cyanogenmod.CMSystemSettingSwitchPreference android:title="@string/live_display_low_power_title" android:key="display_low_power" android:summary="@string/live_display_low_power_summary" android:defaultValue="@cyanogenmod.platform:bool/config_defaultCABC" />
+        <com.android.exsettings.cyanogenmod.CMSystemSettingSwitchPreference android:title="@string/live_display_enhance_color_title" android:key="display_color_enhance" android:summary="@string/live_display_enhance_color_summary" android:defaultValue="@cyanogenmod.platform:bool/config_defaultColorEnhancement" />
+    </PreferenceCategory>
+</PreferenceScreen>

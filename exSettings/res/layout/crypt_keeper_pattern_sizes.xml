@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="14.0sp" android:textColor="@color/crypt_keeper_lock_pattern_text_color" android:layout_gravity="center_horizontal" android:id="@id/lock_pattern_size_3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/lock_pattern_size_3" android:layout_weight="1.0" android:fontFamily="sans-serif" style="?android:attr/borderlessButtonStyle" />
+    <Button android:textSize="14.0sp" android:textColor="@color/crypt_keeper_lock_pattern_text_color" android:layout_gravity="center_horizontal" android:id="@id/lock_pattern_size_4" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/lock_pattern_size_4" android:layout_weight="1.0" android:fontFamily="sans-serif" style="?android:attr/borderlessButtonStyle" />
+    <Button android:textSize="14.0sp" android:textColor="@color/crypt_keeper_lock_pattern_text_color" android:layout_gravity="center_horizontal" android:id="@id/lock_pattern_size_5" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/lock_pattern_size_5" android:layout_weight="1.0" android:fontFamily="sans-serif" style="?android:attr/borderlessButtonStyle" />
+    <Button android:textSize="14.0sp" android:textColor="@color/crypt_keeper_lock_pattern_text_color" android:layout_gravity="center_horizontal" android:id="@id/lock_pattern_size_6" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/lock_pattern_size_6" android:layout_weight="1.0" android:fontFamily="sans-serif" style="?android:attr/borderlessButtonStyle" />
+</merge>

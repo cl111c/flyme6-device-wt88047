@@ -63,6 +63,7 @@ name="ProxyHandler.apk" certificate="build/security/platform.x509.pem" private_k
 name="qcrilmsgtunnel.apk" certificate="build/security/platform.x509.pem" private_key="build/security/platform.pk8"
 name="Screencast.apk" certificate="PRESIGNED" private_key=""
 name="Settings.apk" certificate="build/security/platform.x509.pem" private_key="build/security/platform.pk8"
+name="exSettings.apk" certificate="build/security/platform.x509.pem" private_key="build/security/platform.pk8"
 name="SettingsProvider.apk" certificate="build/security/platform.x509.pem" private_key="build/security/platform.pk8"
 name="SharedStorageBackup.apk" certificate="build/security/platform.x509.pem" private_key="build/security/platform.pk8"
 name="Shell.apk" certificate="build/security/platform.x509.pem" private_key="build/security/platform.pk8"

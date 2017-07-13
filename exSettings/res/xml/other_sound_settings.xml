@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/other_sound_settings" android:key="other_sound_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <SwitchPreference android:persistent="false" android:title="@string/dial_pad_tones_title" android:key="dial_pad_tones" />
+    <SwitchPreference android:persistent="false" android:title="@string/screen_locking_sounds_title" android:key="screen_locking_sounds" />
+    <SwitchPreference android:persistent="false" android:title="@string/docking_sounds_title" android:key="docking_sounds" />
+    <SwitchPreference android:persistent="false" android:title="@string/touch_sounds_title" android:key="touch_sounds" />
+    <com.android.exsettings.cyanogenmod.CMSystemSettingSwitchPreference android:title="@string/volume_adjust_sounds_title" android:key="volume_adjust_sounds_enabled" android:defaultValue="true" />
+    <com.android.exsettings.DropDownPreference android:persistent="false" android:title="@string/dock_audio_media_title" android:key="dock_audio_media" />
+    <com.android.exsettings.DropDownPreference android:persistent="false" android:title="@string/emergency_tone_title" android:key="emergency_tone" />
+    <PreferenceCategory android:title="@string/power_notifications_category_title">
+        <SwitchPreference android:persistent="false" android:title="@string/power_notifications_enable_title" android:key="charging_sounds" android:summary="@string/power_notifications_enable_summary" android:defaultValue="false" />
+        <SwitchPreference android:persistent="false" android:title="@string/power_notifications_vibrate_title" android:key="power_notifications_vibrate" android:dependency="charging_sounds" android:defaultValue="false" />
+        <Preference android:persistent="false" android:title="@string/power_notifications_ringtone_title" android:key="power_notifications_ringtone" android:dependency="charging_sounds" />
+    </PreferenceCategory>
+</PreferenceScreen>

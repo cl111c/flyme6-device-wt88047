@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="25.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:text="@string/navigation_bar_help_text" android:layout_weight="0.2" />
+    <LinearLayout android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.8">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/navbar_restore" android:background="@drawable/ripple_drawable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="25.0dip" style="?android:attr/borderlessButtonStyle">
+            <ImageView android:paddingBottom="15.0dip" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_navbar_restore" />
+            <TextView android:textSize="14.0sp" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/navigation_restore_button_text" android:textAllCaps="true" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/navbar_save" android:background="@drawable/ripple_drawable" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/borderlessButtonStyle">
+            <ImageView android:paddingBottom="15.0dip" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_navbar_save" />
+            <TextView android:textSize="14.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/navigation_save_button_text" android:textAllCaps="true" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/navbar_edit" android:background="@drawable/ripple_drawable" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/borderlessButtonStyle">
+            <ImageView android:paddingBottom="15.0dip" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_navbar_edit" />
+            <TextView android:textSize="14.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/navigation_edit_button_text" android:textAllCaps="true" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

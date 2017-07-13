@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="transparent_background">#00000000</item>
+    <item type="drawable" name="expanded_item_bg_activated">#ffeeeeee</item>
+    <item type="drawable" name="expanded_item_bg">@android:color/background_light</item>
+    <item type="drawable" name="ic_menu_add_word">@drawable/ic_menu_add_dark</item>
+    <item type="drawable" name="ic_bt_bluetooth">@drawable/ic_settings_bluetooth</item>
+    <item type="drawable" name="fp_enrollment_header_landscape">#ff009688</item>
+</resources>

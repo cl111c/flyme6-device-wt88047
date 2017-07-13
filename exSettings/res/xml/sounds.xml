@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/sound_settings" android:key="sound_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/category_volume" android:key="volumes">
+        <com.android.exsettings.notification.VolumeSeekBarPreference android:icon="@drawable/ic_audio_ring" android:title="@string/ring_volume_option_title" android:key="ring_volume" />
+        <com.android.exsettings.notification.VolumeSeekBarPreference android:icon="@android:drawable/ic_audio_vol" android:title="@string/media_volume_option_title" android:key="media_volume" />
+        <com.android.exsettings.notification.VolumeSeekBarPreference android:icon="@android:drawable/ic_audio_alarm" android:title="@string/alarm_volume_option_title" android:key="alarm_volume" />
+        <com.android.exsettings.cyanogenmod.SecureSettingSwitchPreference android:title="@string/link_volume_option_title" android:key="volume_link_notification" />
+        <com.android.exsettings.notification.VolumeSeekBarPreference android:icon="@android:drawable/ic_audio_ring_notif" android:title="@string/notification_volume_option_title" android:key="notification_volume" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_sounds" android:key="sounds">
+        <com.android.exsettings.DefaultRingtonePreference android:persistent="false" android:title="@string/ringtone_title" android:key="ringtone" android:dialogTitle="@string/ringtone_title" android:ringtoneType="ringtone" />
+        <com.android.exsettings.DefaultRingtonePreference android:persistent="false" android:title="@string/notification_ringtone_title_cm" android:key="notification_ringtone" android:dialogTitle="@string/notification_ringtone_title_cm" android:ringtoneType="notification" />
+        <com.android.exsettings.cyanogenmod.CMSystemSettingSwitchPreference android:title="@string/increasing_ring_volume_option_title" android:key="increasing_ring" />
+        <com.android.exsettings.notification.IncreasingRingVolumePreference android:icon="@drawable/ring_notif_increasing" android:key="increasing_ring_volume" android:dependency="increasing_ring" />
+        <com.android.exsettings.cyanogenmod.CMSystemSettingSwitchPreference android:title="@string/headset_connect_player_title" android:key="headset_connect_player" android:summary="@string/headset_connect_player_summary" android:defaultValue="false" />
+        <Preference android:persistent="false" android:title="@string/other_sound_settings" android:key="other_sounds" android:fragment="com.android.exsettings.notification.OtherSoundSettings" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/notification_section_header" android:key="notification">
+        <Preference android:persistent="false" android:title="@string/notification_manager" android:key="notification_manager" android:fragment="com.android.exsettings.notification.NotificationManagerSettings" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_vibrate" android:key="vibrate">
+        <SwitchPreference android:persistent="false" android:title="@string/vibrate_when_ringing_title" android:key="vibrate_when_ringing" />
+        <com.android.exsettings.cyanogenmod.SystemSettingSwitchPreference android:title="@string/vibrate_on_touch_title" android:key="haptic_feedback_enabled" android:defaultValue="true" />
+        <com.android.exsettings.hardware.VibratorIntensity android:persistent="false" android:title="@string/vibrator_intensity_title" android:key="vibration_intensity" android:dialogTitle="@string/vibrator_intensity_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

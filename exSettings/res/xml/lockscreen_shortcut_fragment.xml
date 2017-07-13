@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <PreferenceScreen android:title="@string/lockscreen_targets_bottom">
+        <intent android:targetPackage="com.android.systemui" android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
+    </PreferenceScreen>
+    <SwitchPreference android:title="@string/lockscreen_shorcuts_longpress_title" android:key="lockscreen_shortcuts_longpress" android:summary="@string/lockscreen_shorcuts_longpress_summary" />
+</PreferenceScreen>

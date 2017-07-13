@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/notification_manager"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <com.android.exsettings.cyanogenmod.GlobalSettingSwitchPreference android:title="@string/heads_up_notifications" android:key="heads_up_notifications_enabled" android:summaryOn="@string/summary_heads_up_enabled" android:summaryOff="@string/summary_heads_up_disabled" />
+    <PreferenceScreen android:title="@string/zen_mode_settings_title" android:key="zen_mode" android:fragment="com.android.exsettings.notification.ZenModeSettings" settings:keywords="@string/keywords_sounds_and_notifications_interruptions" />
+    <com.android.exsettings.DropDownPreference android:persistent="false" android:title="@string/lock_screen_notifications_title" android:key="lock_screen_notifications" />
+    <PreferenceScreen android:title="@string/app_notifications_title" android:key="app_notifications" android:fragment="com.android.exsettings.applications.ManageApplications">
+        <extra android:name="classname" android:value="com.android.exsettings.Settings$NotificationAppListActivity" />
+    </PreferenceScreen>
+    <Preference android:persistent="false" android:title="@string/manage_notification_access_title" android:key="manage_notification_access" android:fragment="com.android.exsettings.notification.NotificationAccessSettings" />
+    <PreferenceScreen android:title="@string/block_notifications_title" android:summary="@string/block_notifications_summary" android:fragment="com.android.exsettings.cyanogenmod.SpamList" />
+</PreferenceScreen>

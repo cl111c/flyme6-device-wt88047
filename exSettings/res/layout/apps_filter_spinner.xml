@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:theme="?switchBarTheme" android:gravity="center_vertical" android:background="@drawable/switchbar_background" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Spinner android:id="@id/filter_spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignWithParentIfMissing="true" android:textAlignment="viewStart" android:layout_marginStart="64.0dip" />
+    <View android:id="@id/row_divider" android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</RelativeLayout>

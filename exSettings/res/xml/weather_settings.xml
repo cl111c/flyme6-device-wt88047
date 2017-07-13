@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/weather_settings_general_settings_title" settings:keywords="@string/weather_settings_keyword"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <PreferenceCategory android:title="@string/weather_settings_general_settings_title" android:key="weather_general_settings" android:order="0">
+        <ListPreference android:persistent="false" android:entries="@array/weather_temp_unit_entries" android:title="@string/weather_settings_temp_units_title" android:key="weather_temperature_unit" android:summary="%s" android:entryValues="@array/weather_temp_unit_values" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/weather_settings_providers_title" android:key="weather_service_providers" android:order="1" />
+</PreferenceScreen>

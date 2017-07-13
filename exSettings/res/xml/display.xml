@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/display_and_lights" settings:keywords="@string/keywords_display"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <PreferenceCategory android:title="@string/display_label" android:key="display">
+        <PreferenceScreen android:title="@string/brightness" android:key="brightness" settings:keywords="@string/keywords_display_brightness_level">
+            <intent android:action="android.intent.action.SHOW_BRIGHTNESS_DIALOG" />
+        </PreferenceScreen>
+        <SwitchPreference android:persistent="false" android:title="@string/auto_brightness_title" android:key="auto_brightness" android:summary="@string/auto_brightness_summary" settings:keywords="@string/keywords_display_auto_brightness" />
+        <PreferenceScreen android:title="@string/live_display_title" android:key="live_display" android:summary="@string/live_display_summary" android:fragment="com.android.exsettings.livedisplay.LiveDisplay" />
+        <PreferenceScreen android:title="@string/display_rotation_title" android:key="display_rotation" android:fragment="com.android.exsettings.cyanogenmod.DisplayRotation" />
+        <SwitchPreference android:persistent="false" android:title="@string/doze_title" android:key="doze" android:summary="@string/doze_summary" />
+        <SwitchPreference android:persistent="false" android:title="@string/lift_to_wake_title" android:key="lift_to_wake" />
+        <SwitchPreference android:persistent="false" android:title="@string/double_tap_to_wake_title" android:key="tap_to_wake" android:summary="@string/double_tap_to_wake_summary" />
+        <SwitchPreference android:title="@string/high_touch_sensitivity_title" android:key="high_touch_sensitivity" android:summary="@string/high_touch_sensitivity_summary" android:defaultValue="false" />
+        <SwitchPreference android:persistent="false" android:title="@string/camera_gesture_title" android:key="camera_gesture" android:summary="@string/camera_gesture_desc" />
+        <com.android.exsettings.cyanogenmod.CMSystemSettingSwitchPreference android:title="@string/proximity_wake_title" android:key="proximity_on_wake" android:summary="@string/proximity_wake_summary" />
+        <ListPreference android:persistent="false" android:entries="@array/screen_timeout_entries" android:title="@string/screen_timeout" android:key="screen_timeout" android:summary="@string/screen_timeout_summary" android:entryValues="@array/screen_timeout_values" />
+        <SwitchPreference android:title="@string/wake_when_plugged_or_unplugged_title" android:key="wake_when_plugged_or_unplugged" android:summary="@string/wake_when_plugged_or_unplugged_summary" android:defaultValue="false" />
+        <PreferenceScreen android:title="@string/wifi_display_settings_title" android:key="wifi_display" android:fragment="com.android.exsettings.wfd.WifiDisplaySettings" settings:keywords="@string/keywords_display_cast_screen" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_interface" android:key="interface">
+        <PreferenceScreen android:title="@string/wallpaper_settings_title" android:key="wallpaper" android:fragment="com.android.exsettings.WallpaperTypeSettings" settings:keywords="@string/keywords_display_wallpaper" />
+        <ListPreference android:persistent="false" android:entries="@array/night_mode_entries" android:visibility="gone" android:title="@string/night_mode_title" android:key="night_mode" android:summary="@string/night_mode_summary" android:entryValues="@array/night_mode_values" settings:keywords="@string/keywords_display_night_mode" />
+        <ListPreference android:persistent="false" android:title="@string/lcd_density" android:key="lcd_density" />
+        <PreferenceScreen android:title="@string/screensaver_settings_title" android:key="screensaver" android:fragment="com.android.exsettings.DreamSettings" />
+        <com.android.exsettings.FontDialogPreference android:title="@string/title_font_size" android:key="font_size" android:summary="@string/summary_font_size" android:dialogTitle="@string/dialog_title_font_size" settings:keywords="@string/keywords_display_font_size" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_lights" android:key="lights">
+        <PreferenceScreen android:title="@string/battery_light_title" android:key="battery_light" android:fragment="com.android.exsettings.notificationlight.BatteryLightSettings" />
+        <PreferenceScreen android:title="@string/notification_light_title" android:key="notification_light" android:fragment="com.android.exsettings.notificationlight.NotificationLightSettings" />
+    </PreferenceCategory>
+</PreferenceScreen>

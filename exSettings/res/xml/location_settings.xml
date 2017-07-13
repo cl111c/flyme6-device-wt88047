@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/location_settings_title" android:key="location_settings" settings:keywords="@string/keywords_location"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <Preference android:title="@string/location_mode_title" android:key="location_mode" android:summary="@string/location_mode_location_off_title" settings:keywords="@string/keywords_location_mode" />
+    <SwitchPreference android:title="@string/lto_download_data_wifi_only" android:key="lto_download_data_wifi_only" android:defaultValue="false" android:summaryOn="@string/lto_download_data_wifi_only_on" android:summaryOff="@string/lto_download_data_wifi_only_off" />
+    <PreferenceCategory android:title="@string/managed_profile_location_category" android:key="managed_profile_location_category">
+        <Preference android:persistent="false" android:enabled="false" android:title="@string/managed_profile_location_switch_title" android:selectable="false" android:key="managed_profile_location_switch" android:summary="@string/managed_profile_location_switch_lockdown" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/location_category_recent_location_requests" android:key="recent_location_requests" />
+    <PreferenceCategory android:title="@string/location_category_location_services" android:key="location_services" />
+</PreferenceScreen>

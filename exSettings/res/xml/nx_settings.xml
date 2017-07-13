@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <PreferenceScreen android:title="@string/profiles_settings_title" android:key="profile_settings" android:summary="@string/profiles_settings_summary" android:fragment="com.android.exsettings.profiles.ProfilesSettings" />
+    <PreferenceScreen android:title="@string/power_menu_expanded_desktop" android:key="expanded_desktop" android:summary="@string/expanded_desktop_summary" android:fragment="com.android.exsettings.applications.ExpandedDesktopPreferenceFragment" />
+    <PreferenceScreen android:title="@string/status_bar_title" android:key="status_bar_settings" android:summary="@string/status_bar_summary" android:fragment="com.android.exsettings.cyanogenmod.StatusBarSettings" />
+    <PreferenceScreen android:title="@string/button_pref_title" android:key="button_settings" android:summary="@string/button_pref_summary" android:fragment="com.android.exsettings.ButtonSettings" />
+</PreferenceScreen>

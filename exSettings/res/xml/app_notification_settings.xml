@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/app_notifications_title" android:key="app_notification_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference android:persistent="false" android:title="@string/app_notification_block_title" android:key="block" android:summary="@string/app_notification_block_summary" android:order="1" />
+    <SwitchPreference android:persistent="false" android:title="@string/app_notification_priority_title" android:key="priority" android:summary="@string/app_notification_priority_summary" android:order="2" />
+    <SwitchPreference android:persistent="false" android:title="@string/app_notification_peekable_title" android:key="peekable" android:summary="@string/app_notification_peekable_summary" android:order="3" />
+    <SwitchPreference android:persistent="false" android:title="@string/app_notification_sensitive_title" android:key="sensitive" android:summary="@string/app_notification_sensitive_summary" android:order="4" />
+    <SwitchPreference android:persistent="false" android:title="@string/app_notification_show_on_keyguard_title" android:key="show_on_keyguard" android:summary="@string/app_notification_show_on_keyguard_summary" android:order="5" />
+    <SwitchPreference android:persistent="false" android:title="@string/app_notification_no_ongoing_on_keyguard_title" android:key="no_ongoing_on_keyguard" android:summary="@string/app_notification_no_ongoing_on_keyguard_summary" android:order="6" android:dependency="show_on_keyguard" />
+    <Preference android:persistent="false" android:title="@string/app_notification_preferences" android:key="app_settings" android:order="7" />
+</PreferenceScreen>

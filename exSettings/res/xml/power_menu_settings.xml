@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/power_menu_title"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <CheckBoxPreference android:title="@string/power_menu_reboot_title" android:key="reboot" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/power_menu_screenshot_title" android:key="screenshot" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/power_menu_airplane_title" android:key="airplane" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/power_menu_users_title" android:key="users" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/power_menu_settings_title" android:key="settings" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/power_menu_lockdown_title" android:key="lockdown" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/power_menu_bug_report_title" android:key="bugreport" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/power_menu_sound_title" android:key="silent" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/power_menu_sound_title" android:key="voiceassist" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/power_menu_sound_title" android:key="assist" android:defaultValue="true" />
+</PreferenceScreen>

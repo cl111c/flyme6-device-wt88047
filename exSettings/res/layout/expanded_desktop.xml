@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/extra_content" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ListView android:scrollbarStyle="@android:integer/preference_fragment_scrollbarStyle" android:id="@id/user_list_view" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ProgressBar android:id="@id/progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@android:style/Widget.Material.ProgressBar.Large" />
+    <TextView android:gravity="center" android:id="@id/nothing_to_show" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/expanded_nothing_to_show" />
+</RelativeLayout>

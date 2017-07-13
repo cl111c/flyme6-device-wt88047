@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/anonymous_statistics_title"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <com.android.exsettings.cyanogenmod.CMSecureSettingSwitchPreference android:title="@string/stats_collection_title" android:key="stats_collection" android:summary="@string/stats_collection_summary" android:defaultValue="true" />
+    <PreferenceScreen android:title="@string/preview_data_title" android:fragment="com.android.exsettings.cmstats.PreviewData" />
+</PreferenceScreen>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/expanded_desktop_title">
+        <ListPreference android:entries="@array/expanded_desktop_entries" android:title="@string/expanded_desktop_style" android:key="expanded_desktop_style" android:entryValues="@array/expanded_desktop_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

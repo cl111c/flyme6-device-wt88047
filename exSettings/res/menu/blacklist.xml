@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_settings_24dp" android:id="@id/blacklist_prefs" android:title="@string/blacklist_prefs" android:showAsAction="ifRoom|withText" />
+</menu>

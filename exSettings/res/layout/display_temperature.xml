@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <RelativeLayout android:gravity="center_horizontal" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+        <TextView android:id="@id/day_temperature_text" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/live_display_day" />
+        <TextView android:id="@id/day_temperature_value" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+        <SeekBar android:id="@id/day_temperature_seekbar" android:paddingTop="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/day_temperature_text" />
+        <TextView android:id="@id/night_temperature_text" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/live_display_night" android:layout_below="@id/day_temperature_seekbar" />
+        <TextView android:id="@id/night_temperature_value" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/day_temperature_seekbar" android:layout_alignParentRight="true" />
+        <SeekBar android:id="@id/night_temperature_seekbar" android:paddingTop="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/night_temperature_text" />
+        <ImageView android:id="@id/black_scale_picture_color" android:paddingTop="20.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:src="@drawable/color_temperature_preview" android:layout_below="@id/night_temperature_seekbar" />
+    </RelativeLayout>
+</ScrollView>

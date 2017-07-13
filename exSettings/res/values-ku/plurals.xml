@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="backlight_timeout_time">
+        <item quantity="other">%d دووەم</item>
+        <item quantity="one">%d دووەم</item>
+    </plurals>
+    <plurals name="lockpassword_password_requires_letters">
+        <item quantity="other">نهێنووشە ئەبێ هیچ نەبی %d پیت لەخۆ بگرێت.</item>
+        <item quantity="one">نهێنووشە ئەبێ هیچ نەبێ یەک پیت لەخۆ بگرێت.</item>
+    </plurals>
+    <plurals name="lockpassword_password_requires_lowercase">
+        <item quantity="other">نهێنووشە ئەبێ هیچ نەبێ %d پیتی بچوک لەخۆ بگرێت.</item>
+        <item quantity="one">نهێنووشە ئەبێ هیچ نەبێ یەک پیتی بچوک لەخۆ بگرێت.</item>
+    </plurals>
+    <plurals name="lockpassword_password_requires_uppercase">
+        <item quantity="other">نهێنووشە ئەبێ هیچ نەبێ %d پیتی گەورە لەخۆ بگرێت.</item>
+        <item quantity="one">نهێنووشە ئەبێ هیچ نەبێ یەک پیتی گەورە لەخۆ بگرێت.</item>
+    </plurals>
+    <plurals name="lockpassword_password_requires_numeric">
+        <item quantity="other">نهێنووشە ئەبێ هیچ نەبێ %d هێمای ژمارەیی لەخۆ بگرێت.</item>
+        <item quantity="one">نهێنووشە ئەبێ هیچ نەبێ یەک هێمای ژمارەیی لەخۆ بگرێت.</item>
+    </plurals>
+    <plurals name="lockpassword_password_requires_symbols">
+        <item quantity="other">نهێنووشە ئەبێ هیچ نەبێ %d هێمای تاییبەت لەخۆ بگرێت.</item>
+        <item quantity="one">نهێنووشە ئەبێ هیچ نەبێ یەک هێمای تاییبەت لەخۆ بگرێت.</item>
+    </plurals>
+    <plurals name="lockpassword_password_requires_nonletter">
+        <item quantity="other">نهێنووشە ئەبێ هیچ نەبێ %d هێمای لە پیت نەچوو لەخۆ بگرێت.</item>
+        <item quantity="one">نهێنووشە ئەبێ هیچ نەبێ یەک هێمای لە پیت نەچوو لەخۆ بگرێت.</item>
+    </plurals>
+    <plurals name="wrong_pin_code">
+        <item quantity="other">کۆدی PIN هەڵەبوو. تەنها %d جارت ماوە هەڵە بکەی.ئەگەر دڵینا نیت دوبارەی مەکەوە.</item>
+        <item quantity="one">کۆدی PIN هەڵەبوو. تەنها %d جارت ماوە هەڵە بکەی.ئەگەر دڵینا نیت دوبارەی مەکەوە.</item>
+    </plurals>
+    <plurals name="manage_notification_access_summary_nonzero">
+        <item quantity="other">%d بەرنامەکان ئەتوانن ئاگادارکردنەوەکان بخوێنێتەوە</item>
+        <item quantity="one">%d بەرنامەکە ئەتوانێت ئاگادارکردنەوەکان بخوێنێتەوە</item>
+    </plurals>
+</resources>

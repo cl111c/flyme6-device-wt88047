@@ -14,6 +14,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/Activity$FlymeInjector;,
         Landroid/app/Activity$ManagedDialog;,
         Landroid/app/Activity$NonConfigurationInstances;,
         Landroid/app/Activity$ManagedCursor;,
@@ -64,6 +65,12 @@
 
 
 # instance fields
+.field mFlymeAccessControlManager:Lmeizu/security/AccessControlManager;
+
+.field mFlymeActionBarToTop:Z
+
+.field mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
+
 .field mActionBar:Landroid/app/ActionBar;
 
 .field private mActionModeTypeStarting:I
@@ -205,7 +212,7 @@
 
     new-array v0, v0, [I
 
-    const v1, 0x101009c
+    const v1, #android:attr@state_focused#t
 
     const/4 v2, 0x0
 
@@ -275,57 +282,46 @@
 
     iput-object v0, p0, Landroid/app/Activity;->mFragments:Landroid/app/FragmentController;
 
-    .line 774
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 773
     iput-object v0, p0, Landroid/app/Activity;->mManagedCursors:Ljava/util/ArrayList;
 
-    .line 777
     iput v1, p0, Landroid/app/Activity;->mResultCode:I
 
-    .line 778
     iput-object v2, p0, Landroid/app/Activity;->mResultData:Landroid/content/Intent;
 
-    .line 785
     iput-boolean v1, p0, Landroid/app/Activity;->mTitleReady:Z
 
-    .line 786
     iput v1, p0, Landroid/app/Activity;->mActionModeTypeStarting:I
 
-    .line 788
     iput v1, p0, Landroid/app/Activity;->mDefaultKeyMode:I
 
-    .line 789
     iput-object v2, p0, Landroid/app/Activity;->mDefaultKeySsb:Landroid/text/SpannableStringBuilder;
 
-    .line 794
     invoke-static {p0}, Landroid/os/StrictMode;->trackActivity(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/Activity;->mInstanceTracker:Ljava/lang/Object;
 
-    .line 798
     new-instance v0, Landroid/app/ActivityTransitionState;
 
     invoke-direct {v0}, Landroid/app/ActivityTransitionState;-><init>()V
 
     iput-object v0, p0, Landroid/app/Activity;->mActivityTransitionState:Landroid/app/ActivityTransitionState;
 
-    .line 799
     sget-object v0, Landroid/app/SharedElementCallback;->NULL_CALLBACK:Landroid/app/SharedElementCallback;
 
     iput-object v0, p0, Landroid/app/Activity;->mEnterTransitionListener:Landroid/app/SharedElementCallback;
 
-    .line 800
     sget-object v0, Landroid/app/SharedElementCallback;->NULL_CALLBACK:Landroid/app/SharedElementCallback;
 
     iput-object v0, p0, Landroid/app/Activity;->mExitTransitionListener:Landroid/app/SharedElementCallback;
 
-    .line 670
+    invoke-direct/range {p0 .. p0}, Landroid/app/Activity;->initFlymeExtraFields()V
+
     return-void
 .end method
 
@@ -4122,6 +4118,8 @@
     .line 4801
     .end local v0    # "wm":Landroid/view/ViewManager;
     :cond_0
+    invoke-static/range {p0 .. p0}, Landroid/app/Activity$FlymeInjector;->onStart(Landroid/app/Activity;)V
+
     iget-object v1, p0, Landroid/app/Activity;->mDecor:Landroid/view/View;
 
     const/4 v2, 0x0
@@ -4635,6 +4633,9 @@
 
     .line 1729
     :cond_1
+
+    invoke-static/range {p0 .. p1}, Landroid/app/Activity$FlymeInjector;->onConfigurationChanged(Landroid/app/Activity;Landroid/content/res/Configuration;)V
+
     return-void
 .end method
 
@@ -4751,47 +4752,40 @@
 
     if-eqz v3, :cond_2
 
-    .line 919
     iget-object v1, p0, Landroid/app/Activity;->mLastNonConfigurationInstances:Landroid/app/Activity$NonConfigurationInstances;
 
     iget-object v1, v1, Landroid/app/Activity$NonConfigurationInstances;->fragments:Ljava/util/List;
 
-    .line 918
     :cond_2
     invoke-virtual {v2, v0, v1}, Landroid/app/FragmentController;->restoreAllState(Landroid/os/Parcelable;Ljava/util/List;)V
 
-    .line 921
     .end local v0    # "p":Landroid/os/Parcelable;
     :cond_3
     iget-object v1, p0, Landroid/app/Activity;->mFragments:Landroid/app/FragmentController;
 
     invoke-virtual {v1}, Landroid/app/FragmentController;->dispatchCreate()V
 
-    .line 922
     invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v1
 
     invoke-virtual {v1, p0, p1}, Landroid/app/Application;->dispatchActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
 
-    .line 923
     iget-object v1, p0, Landroid/app/Activity;->mVoiceInteractor:Landroid/app/VoiceInteractor;
 
     if-eqz v1, :cond_4
 
-    .line 924
     iget-object v1, p0, Landroid/app/Activity;->mVoiceInteractor:Landroid/app/VoiceInteractor;
 
     invoke-virtual {v1, p0}, Landroid/app/VoiceInteractor;->attachActivity(Landroid/app/Activity;)V
 
-    .line 926
     :cond_4
     iput-boolean v4, p0, Landroid/app/Activity;->mCalled:Z
 
-    .line 904
+    invoke-static/range {p0 .. p0}, Landroid/app/Activity$FlymeInjector;->onCreate(Landroid/app/Activity;)V
+
     return-void
 
-    .line 913
     :cond_5
     iget-object v2, p0, Landroid/app/Activity;->mActionBar:Landroid/app/ActionBar;
 
@@ -5645,7 +5639,7 @@
 
     move-result v1
 
-    const v2, 0x102002c
+    const v2, #android:id@home#t
 
     if-ne v1, v2, :cond_4
 
@@ -6336,24 +6330,22 @@
     .locals 1
 
     .prologue
-    .line 1211
     invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Landroid/app/Application;->dispatchActivityResumed(Landroid/app/Activity;)V
 
-    .line 1212
     iget-object v0, p0, Landroid/app/Activity;->mActivityTransitionState:Landroid/app/ActivityTransitionState;
 
     invoke-virtual {v0}, Landroid/app/ActivityTransitionState;->onResume()V
 
-    .line 1213
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/Activity;->mCalled:Z
 
-    .line 1209
+    invoke-static/range {p0 .. p0}, Landroid/app/Activity$FlymeInjector;->injectAccessControl(Landroid/app/Activity;)V
+
     return-void
 .end method
 
@@ -6763,15 +6755,16 @@
     .param p1, "params"    # Landroid/view/WindowManager$LayoutParams;
 
     .prologue
-    .line 2622
+    invoke-static/range {p0 .. p1}, Landroid/app/Activity$FlymeInjector;->onWindowAttributesChanged(Landroid/app/Activity;Landroid/view/WindowManager$LayoutParams;)Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object p1
+
     iget-object v1, p0, Landroid/app/Activity;->mParent:Landroid/app/Activity;
 
     if-nez v1, :cond_0
 
-    .line 2623
     iget-object v0, p0, Landroid/app/Activity;->mDecor:Landroid/view/View;
 
-    .line 2624
     .local v0, "decor":Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -9721,6 +9714,18 @@
     .param p2, "options"    # Landroid/os/Bundle;
 
     .prologue
+    invoke-static/range {p0 .. p1}, Landroid/app/Activity$FlymeInjector;->checkFlymeAccessControl(Landroid/app/Activity;Landroid/content/Intent;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    invoke-static/range {p0 .. p2}, Landroid/app/Activity$FlymeInjector;->startFlymeActivity(Landroid/app/Activity;Landroid/content/Intent;Landroid/os/Bundle;)V
+
+    return-void
+
+    :cond_flyme_0
+
     const/4 v0, -0x1
 
     .line 4208
@@ -11156,5 +11161,197 @@
     invoke-virtual {p1, v0}, Landroid/view/View;->setOnCreateContextMenuListener(Landroid/view/View$OnCreateContextMenuListener;)V
 
     .line 3243
+    return-void
+.end method
+
+.method public drawStatusBarBackground(Landroid/graphics/Canvas;)V
+    .locals 1
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
+
+    .prologue
+    iget-object v0, p0, Landroid/app/Activity;->mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
+
+    invoke-virtual {v0, p1}, Landroid/app/Activity$FlymeInjector$TintBarInject;->drawStatusBarBackground(Landroid/graphics/Canvas;)V
+
+    return-void
+.end method
+
+.method public getActivityInfo()Landroid/content/pm/ActivityInfo;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/app/Activity;->mActivityInfo:Landroid/content/pm/ActivityInfo;
+
+    return-object v0
+.end method
+
+.method public isActionBarToTop()Z
+    .locals 1
+
+    .prologue
+    iget-boolean v0, p0, Landroid/app/Activity;->mFlymeActionBarToTop:Z
+
+    return v0
+.end method
+
+.method public onStatusBarColorChange(I)I
+    .locals 1
+    .param p1, "color"    # I
+
+    .prologue
+    iget-object v0, p0, Landroid/app/Activity;->mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
+
+    invoke-virtual {v0, p1}, Landroid/app/Activity$FlymeInjector$TintBarInject;->onStatusBarColorChange(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method final scrollForCapture([Landroid/view/MotionEvent;I)V
+    .locals 3
+    .param p1, "event"    # [Landroid/view/MotionEvent;
+    .param p2, "value"    # I
+
+    .prologue
+    array-length v0, p1
+
+    .local v0, "length":I
+    if-lez v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v1
+
+    new-instance v2, Landroid/app/Activity$FlymeInjector$FlymeDecorView;
+
+    invoke-direct {v2, p0, p1}, Landroid/app/Activity$FlymeInjector$FlymeDecorView;-><init>(Landroid/app/Activity;[Landroid/view/MotionEvent;)V
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    :cond_0
+    return-void
+.end method
+
+.method public setActionBarToTop(Z)V
+    .locals 0
+    .param p1, "actionBarToTop"    # Z
+
+    .prologue
+    iput-boolean p1, p0, Landroid/app/Activity;->mFlymeActionBarToTop:Z
+
+    invoke-static {p0, p1}, Landroid/app/Activity$FlymeInjector;->setTranslucentStatus(Landroid/app/Activity;Z)V
+
+    return-void
+.end method
+
+.method public setStatusBarDarkIcon(I)V
+    .locals 2
+    .param p1, "color"    # I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Landroid/app/Activity;->mWindow:Landroid/view/Window;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setAutoStatusBarIcon(Z)V
+
+    iget-object v0, p0, Landroid/app/Activity;->mWindow:Landroid/view/Window;
+
+    invoke-virtual {v0, p1}, Landroid/view/Window;->setStatusBarIconColor(I)V
+
+    return-void
+.end method
+
+.method public setStatusBarDarkIcon(Z)V
+    .locals 2
+    .param p1, "on"    # Z
+
+    .prologue
+    iget-object v0, p0, Landroid/app/Activity;->mWindow:Landroid/view/Window;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setAutoStatusBarIcon(Z)V
+
+    iget-object v0, p0, Landroid/app/Activity;->mWindow:Landroid/view/Window;
+
+    invoke-virtual {v0, p1}, Landroid/view/Window;->setStatusBarDarkIcon(Z)V
+
+    return-void
+.end method
+
+.method public setStatusBarIconColor(I)V
+    .locals 2
+    .param p1, "color"    # I
+
+    .prologue
+    iget-object v0, p0, Landroid/app/Activity;->mWindow:Landroid/view/Window;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setAutoStatusBarIcon(Z)V
+
+    iget-object v0, p0, Landroid/app/Activity;->mWindow:Landroid/view/Window;
+
+    invoke-virtual {v0, p1}, Landroid/view/Window;->setStatusBarIconColor(I)V
+
+    return-void
+.end method
+
+.method public overridePendingTransition(Landroid/os/Bundle;)V
+    .locals 5
+    .param p1, "options"    # Landroid/os/Bundle;
+
+    .prologue
+    :try_start_0
+    new-instance v1, Landroid/app/FlymeExtIActivityManagerProxy;
+
+    invoke-direct {v1}, Landroid/app/FlymeExtIActivityManagerProxy;-><init>()V
+
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Landroid/app/IActivityManager;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/app/Activity;->mToken:Landroid/os/IBinder;
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v2, v3, v4, p1}, Landroid/app/FlymeExtIActivityManagerProxy;->overridePendingTransition(Landroid/os/IBinder;Landroid/os/IBinder;Ljava/lang/String;Landroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    .local v0, "e":Landroid/os/RemoteException;
+    goto :goto_0
+.end method
+
+.method private initFlymeExtraFields()V
+    .locals 1
+
+    .prologue
+    new-instance v0, Landroid/app/Activity$FlymeInjector$TintBarInject;
+
+    invoke-direct {v0, p0}, Landroid/app/Activity$FlymeInjector$TintBarInject;-><init>(Landroid/app/Activity;)V
+
+    iput-object v0, p0, Landroid/app/Activity;->mFlymeTintBarInject:Landroid/app/Activity$FlymeInjector$TintBarInject;
+
     return-void
 .end method

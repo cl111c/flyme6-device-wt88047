@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/power_usage_summary_title" settings:keywords="@string/keywords_battery"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.exsettings">
+    <ListPreference android:persistent="false" android:title="@string/perf_profile_title" android:key="pref_perf_profile" android:dialogTitle="@string/perf_profile_title" />
+    <com.android.exsettings.cyanogenmod.CMSecureSettingSwitchPreference android:title="@string/autoperf_title" android:key="app_perf_profiles_enabled" android:summary="@string/autoperf_summary" android:defaultValue="true" />
+    <com.android.exsettings.fuelgauge.BatteryHistoryPreference android:key="battery_history" />
+    <PreferenceCategory android:title="@string/power_usage_list_summary" android:key="app_list" />
+</PreferenceScreen>

@@ -1,0 +1,487 @@
+.method private toParcelableCall(Lcom/android/server/telecom/Call;Z)Landroid/telecom/ParcelableCall;
+    .locals 39
+    .param p1, "call"    # Lcom/android/server/telecom/Call;
+    .param p2, "includeVideoProvider"    # Z
+
+    .prologue
+    .line 636
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/telecom/InCallController;->mCallIdMapper:Lcom/android/server/telecom/CallIdMapper;
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v3, v0}, Lcom/android/server/telecom/CallIdMapper;->getCallId(Lcom/android/server/telecom/Call;)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 638
+    .local v4, "callId":Ljava/lang/String;
+    invoke-static/range {p1 .. p1}, Lcom/android/server/telecom/InCallController;->getParcelableState(Lcom/android/server/telecom/Call;)I
+
+    move-result v5
+
+    .line 639
+    .local v5, "state":I
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getConnectionCapabilities()I
+
+    move-result v3
+
+    invoke-static {v3}, Lcom/android/server/telecom/InCallController;->convertConnectionToCallCapabilities(I)I
+
+    move-result v8
+
+    .line 640
+    .local v8, "capabilities":I
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getConnectionCapabilities()I
+
+    move-result v3
+
+    invoke-static {v3}, Lcom/android/server/telecom/InCallController;->convertConnectionToCallProperties(I)I
+
+    move-result v9
+
+    .line 644
+    .local v9, "properties":I
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->isConference()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->isIncomingFromConfServer()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 646
+    :cond_0
+    or-int/lit8 v9, v9, 0x1
+
+    .line 651
+    :cond_1
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/telecom/InCallController;->mCallsManager:Lcom/android/server/telecom/CallsManager;
+
+    invoke-virtual {v3}, Lcom/android/server/telecom/CallsManager;->getPhoneAccountRegistrar()Lcom/android/server/telecom/PhoneAccountRegistrar;
+
+    move-result-object v3
+
+    .line 652
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getTargetPhoneAccount()Landroid/telecom/PhoneAccountHandle;
+
+    move-result-object v6
+
+    .line 651
+    invoke-virtual {v3, v6}, Lcom/android/server/telecom/PhoneAccountRegistrar;->isUserSelectedSmsPhoneAccount(Landroid/telecom/PhoneAccountHandle;)Z
+
+    move-result v33
+
+    .line 653
+    .local v33, "isDefaultSmsAccount":Z
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->isRespondViaSmsCapable()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    if-eqz v33, :cond_2
+
+    .line 654
+    or-int/lit8 v8, v8, 0x20
+
+    .line 657
+    :cond_2
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->isEmergencyCall()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    .line 659
+    const/16 v3, 0x40
+
+    .line 658
+    invoke-static {v8, v3}, Lcom/android/server/telecom/InCallController;->removeCapability(II)I
+
+    move-result v8
+
+    .line 662
+    :cond_3
+    const/4 v3, 0x1
+
+    if-ne v5, v3, :cond_4
+
+    .line 664
+    const/16 v3, 0x300
+
+    .line 663
+    invoke-static {v8, v3}, Lcom/android/server/telecom/InCallController;->removeCapability(II)I
+
+    move-result v8
+
+    .line 666
+    const/16 v3, 0xc00
+
+    .line 665
+    invoke-static {v8, v3}, Lcom/android/server/telecom/InCallController;->removeCapability(II)I
+
+    move-result v8
+
+    .line 669
+    :cond_4
+    const/16 v22, 0x0
+
+    .line 670
+    .local v22, "parentCallId":Ljava/lang/String;
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getParentCall()Lcom/android/server/telecom/Call;
+
+    move-result-object v38
+
+    .line 671
+    .local v38, "parentCall":Lcom/android/server/telecom/Call;
+    if-eqz v38, :cond_5
+
+    .line 672
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/telecom/InCallController;->mCallIdMapper:Lcom/android/server/telecom/CallIdMapper;
+
+    move-object/from16 v0, v38
+
+    invoke-virtual {v3, v0}, Lcom/android/server/telecom/CallIdMapper;->getCallId(Lcom/android/server/telecom/Call;)Ljava/lang/String;
+
+    move-result-object v22
+
+    .line 675
+    .end local v22    # "parentCallId":Ljava/lang/String;
+    :cond_5
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getConnectTimeMillis()J
+
+    move-result-wide v12
+
+    .line 676
+    .local v12, "connectTimeMillis":J
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getChildCalls()Ljava/util/List;
+
+    move-result-object v31
+
+    .line 677
+    .local v31, "childCalls":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/telecom/Call;>;"
+    new-instance v23, Ljava/util/ArrayList;
+
+    invoke-direct/range {v23 .. v23}, Ljava/util/ArrayList;-><init>()V
+
+    .line 678
+    .local v23, "childCallIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    invoke-interface/range {v31 .. v31}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-nez v3, :cond_8
+
+    .line 679
+    const-wide v32, 0x7fffffffffffffffL
+
+    .line 680
+    .local v32, "childConnectTimeMillis":J
+    invoke-interface/range {v31 .. v31}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v30
+
+    .local v30, "child$iterator":Ljava/util/Iterator;
+    :goto_0
+    invoke-interface/range {v30 .. v30}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-interface/range {v30 .. v30}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/telecom/Call;
+
+    .line 681
+    .local v2, "child":Lcom/android/server/telecom/Call;
+    invoke-virtual {v2}, Lcom/android/server/telecom/Call;->getConnectTimeMillis()J
+
+    move-result-wide v6
+
+    const-wide/16 v18, 0x0
+
+    cmp-long v3, v6, v18
+
+    if-lez v3, :cond_6
+
+    .line 682
+    invoke-virtual {v2}, Lcom/android/server/telecom/Call;->getConnectTimeMillis()J
+
+    move-result-wide v6
+
+    move-wide/from16 v0, v32
+
+    invoke-static {v6, v7, v0, v1}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v32
+
+    .line 685
+    :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/telecom/InCallController;->mCallIdMapper:Lcom/android/server/telecom/CallIdMapper;
+
+    invoke-virtual {v3, v2}, Lcom/android/server/telecom/CallIdMapper;->getCallId(Lcom/android/server/telecom/Call;)Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object/from16 v0, v23
+
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 688
+    .end local v2    # "child":Lcom/android/server/telecom/Call;
+    :cond_7
+    const-wide v6, 0x7fffffffffffffffL
+
+    cmp-long v3, v32, v6
+
+    if-eqz v3, :cond_8
+
+    .line 689
+    move-wide/from16 v12, v32
+
+    .line 696
+    .end local v30    # "child$iterator":Ljava/util/Iterator;
+    .end local v32    # "childConnectTimeMillis":J
+    :cond_8
+    invoke-interface/range {v31 .. v31}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-nez v3, :cond_9
+
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getConnectTimeMillis()J
+
+    move-result-wide v6
+
+    const-wide/16 v18, 0x0
+
+    cmp-long v3, v6, v18
+
+    if-lez v3, :cond_9
+
+    .line 697
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getConnectTimeMillis()J
+
+    move-result-wide v12
+
+    .line 701
+    :cond_9
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getHandlePresentation()I
+
+    move-result v3
+
+    const/4 v6, 0x1
+
+    if-ne v3, v6, :cond_b
+
+    .line 702
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getHandle()Landroid/net/Uri;
+
+    move-result-object v14
+
+    .line 703
+    :goto_1
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getCallerDisplayNamePresentation()I
+
+    move-result v3
+
+    .line 704
+    const/4 v6, 0x1
+
+    .line 703
+    if-ne v3, v6, :cond_c
+
+    .line 704
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getCallerDisplayName()Ljava/lang/String;
+
+    move-result-object v16
+
+    .line 706
+    :goto_2
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getConferenceableCalls()Ljava/util/List;
+
+    move-result-object v34
+
+    .line 707
+    .local v34, "conferenceableCalls":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/telecom/Call;>;"
+    new-instance v26, Ljava/util/ArrayList;
+
+    invoke-interface/range {v34 .. v34}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    move-object/from16 v0, v26
+
+    invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 708
+    .local v26, "conferenceableCallIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    invoke-interface/range {v34 .. v34}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v36
+
+    .local v36, "otherCall$iterator":Ljava/util/Iterator;
+    :cond_a
+    :goto_3
+    invoke-interface/range {v36 .. v36}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_d
+
+    invoke-interface/range {v36 .. v36}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v35
+
+    check-cast v35, Lcom/android/server/telecom/Call;
+
+    .line 709
+    .local v35, "otherCall":Lcom/android/server/telecom/Call;
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/telecom/InCallController;->mCallIdMapper:Lcom/android/server/telecom/CallIdMapper;
+
+    move-object/from16 v0, v35
+
+    invoke-virtual {v3, v0}, Lcom/android/server/telecom/CallIdMapper;->getCallId(Lcom/android/server/telecom/Call;)Ljava/lang/String;
+
+    move-result-object v37
+
+    .line 710
+    .local v37, "otherId":Ljava/lang/String;
+    if-eqz v37, :cond_a
+
+    .line 711
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v37
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_3
+
+    .line 702
+    .end local v26    # "conferenceableCallIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v34    # "conferenceableCalls":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/telecom/Call;>;"
+    .end local v35    # "otherCall":Lcom/android/server/telecom/Call;
+    .end local v36    # "otherCall$iterator":Ljava/util/Iterator;
+    .end local v37    # "otherId":Ljava/lang/String;
+    :cond_b
+    const/4 v14, 0x0
+
+    .local v14, "handle":Landroid/net/Uri;
+    goto :goto_1
+
+    .line 704
+    .end local v14    # "handle":Landroid/net/Uri;
+    :cond_c
+    const/16 v16, 0x0
+
+    .local v16, "callerDisplayName":Ljava/lang/String;
+    goto :goto_2
+
+    .line 715
+    .end local v16    # "callerDisplayName":Ljava/lang/String;
+    .restart local v26    # "conferenceableCallIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .restart local v34    # "conferenceableCalls":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/telecom/Call;>;"
+    .restart local v36    # "otherCall$iterator":Ljava/util/Iterator;
+    :cond_d
+    new-instance v3, Landroid/telecom/ParcelableCall;
+
+    .line 718
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getDisconnectCause()Landroid/telecom/DisconnectCause;
+
+    move-result-object v6
+
+    .line 719
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getCannedSmsResponses()Ljava/util/List;
+
+    move-result-object v7
+
+    .line 724
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getCreationTimeMillis()J
+
+    move-result-wide v10
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getHandlePresentation()I
+
+    move-result v15
+
+    .line 726
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getCallerDisplayNamePresentation()I
+
+    move-result v17
+
+    .line 727
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getGatewayInfo()Landroid/telecom/GatewayInfo;
+
+    move-result-object v18
+
+    .line 728
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getTargetPhoneAccount()Landroid/telecom/PhoneAccountHandle;
+
+    move-result-object v19
+
+    .line 730
+    if-eqz p2, :cond_e
+
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getVideoProvider()Lcom/android/internal/telecom/IVideoProvider;
+
+    move-result-object v21
+
+    .line 733
+    :goto_4
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getStatusHints()Landroid/telecom/StatusHints;
+
+    move-result-object v24
+
+    .line 734
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getVideoState()I
+
+    move-result v25
+
+    .line 736
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getIntentExtras()Landroid/os/Bundle;
+
+    move-result-object v27
+
+    .line 737
+    invoke-virtual/range {p1 .. p1}, Lcom/android/server/telecom/Call;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v28
+
+    move-object/from16 v0, p1
+
+    iget-boolean v0, v0, Lcom/android/server/telecom/Call;->mIsActiveSub:Z
+
+    move/from16 v29, v0
+    move/from16 v20, p2
+
+    .line 715
+    invoke-direct/range {v3 .. v29}, Landroid/telecom/ParcelableCall;-><init>(Ljava/lang/String;ILandroid/telecom/DisconnectCause;Ljava/util/List;IIJJLandroid/net/Uri;ILjava/lang/String;ILandroid/telecom/GatewayInfo;Landroid/telecom/PhoneAccountHandle;ZLcom/android/internal/telecom/IVideoProvider;Ljava/lang/String;Ljava/util/List;Landroid/telecom/StatusHints;ILjava/util/List;Landroid/os/Bundle;Landroid/os/Bundle;Z)V
+
+    return-object v3
+
+    .line 730
+    :cond_e
+    const/16 v21, 0x0
+
+    goto :goto_4
+.end method
+
