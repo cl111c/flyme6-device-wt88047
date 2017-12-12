@@ -221,7 +221,9 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/AbsListView;->mzOnCreateActionMode(Landroid/view/ActionMode;)Z
 
-    return-void
+    move-result v0
+    
+    return v0
 .end method
 
 .method private mzOnDestroyActionMode()V
