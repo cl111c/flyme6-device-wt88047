@@ -454,6 +454,8 @@
 /dev/bhi	u:object_r:bhi_device:s0
 /dev/qce	u:object_r:qce_device:s0
 /dev/usf1	u:object_r:usf_device:s0
+/dev/socket/flymed	u:object_r:flymed_socket:s0
+/system/bin/flymed	u:object_r:flymed_exec:s0
 /dev/diag	u:object_r:diag_device:s0
 /dev/rtc0	u:object_r:rtc_device:s0
 /dev/smd3	u:object_r:hci_attach_dev:s0
